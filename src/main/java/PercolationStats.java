@@ -7,7 +7,10 @@
 public class PercolationStats {
 
     // perform independent trials on an n-by-n grid
-    public PercolationStats(int n, int trials) {}
+    public PercolationStats(int n, int trials) {
+        if (n <= 0) throw new IllegalArgumentException("grid size must be more than zero");
+        if (trials <= 0) throw new IllegalArgumentException("trials number must be more than zero");
+    }
 
     // sample mean of percolation threshold
     public double mean() {
@@ -30,5 +33,13 @@ public class PercolationStats {
     }
 
     // test client (see below)
-    public static void main(String[] args) {}
+    public static void main(String[] args) {
+        /** takes two command-line arguments n and T,
+         * performs T independent computational experiments (discussed above)
+         * on an n-by-n grid, and prints the sample mean, sample standard deviation,
+         * and the 95% confidence interval for the percolation threshold.
+         * Use StdRandom to generate random numbers;
+         * use StdStats to compute the sample mean and sample standard deviation.         *
+         */
+    }
 }
